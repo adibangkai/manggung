@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://adibangkai:adibangkai@devconnector-3lpvc.mongodb.net/test?retryWrites=true"
+  "mongoURI": "mongodb+srv://adibangkai:adibangkai@devconnector-3lpvc.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "tokenrahasia"
 }
