@@ -5,8 +5,13 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
-  band: {
-    type: String
+  tipe: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
   },
   website: {
     type: String
@@ -15,20 +20,19 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
   genre: {
-    type: [String],
-    required: true
+    type: [String]
   },
   bio: {
     type: String
   },
 
-  discography: [
+  image: [
     {
       title: {
         type: String,
         required: true
       },
-      year: {
+      url: {
         type: String,
         required: true
       }

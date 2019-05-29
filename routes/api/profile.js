@@ -36,10 +36,10 @@ router.post(
   [
     auth,
     [
-      check('band', 'Band name is required')
+      check('tipe', 'Tipe harus diisi apakah band atau venue')
         .not()
         .isEmpty(),
-      check('genre', 'Genre is required')
+      check('name', 'Name is required')
         .not()
         .isEmpty()
     ]
@@ -51,7 +51,8 @@ router.post(
     }
 
     const {
-      band,
+      tipe,
+      name,
       website,
       location,
       bio,
@@ -65,7 +66,8 @@ router.post(
     //build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (band) profileFields.band = band;
+    if (tipe) profileFields.tipe = tipe;
+    if (name) profileFields.name = name;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
@@ -139,5 +141,44 @@ router.get('/user/:user_id', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+// @route   DELETE api/profile
+// @desc    DELETE profile,user & post
+// @access  private
+
+router.delete('/', auth, async (req, res) => {
+  try {
+    //@todo remove users post
+    //remove profile
+    await Profile.findOneAndRemove({ user: req.user.id });
+
+    await User.findOneAndRemove({ _id: req.user.id });
+
+    res.json({ msg: 'user deleted' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route   PUT api/profile/image
+// @desc    add profile image
+// @access  private
+
+router.put(
+  '/gallery',
+  [
+    auth,
+    [
+      check('title', 'title is required')
+        .not()
+        .isEmpty(),
+      check('url', 'url is required')
+        .not()
+        .isEmpty()
+    ]
+  ],
+  async (req, res) => {}
+);
 
 module.exports = router;
