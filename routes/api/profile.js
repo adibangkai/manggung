@@ -166,7 +166,7 @@ router.delete('/', auth, async (req, res) => {
 // @access  private
 
 router.put(
-  '/gallery',
+  '/media',
   [
     auth,
     [
@@ -178,7 +178,53 @@ router.put(
         .isEmpty()
     ]
   ],
-  async (req, res) => {}
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { title, url } = req.body;
+
+    const newMedia = {
+      title,
+      url
+    };
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+      profile.media.unshift(newMedia);
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('server error');
+    }
+  }
 );
 
+// @route   DELETE api/profile/media/:med_id
+// @desc    DELETE profile,user & post
+// @access  private
+
+router.delete('/media/:med_id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.user.id });
+
+    //get remove index
+    const removeIndex = profile.media
+      .map(item => item.id)
+      .indexOf(req.params.med_id);
+
+    profile.media.splice(removeIndex, 1);
+
+    await profile.save();
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 module.exports = router;

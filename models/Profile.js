@@ -26,7 +26,7 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
 
-  image: [
+  media: [
     {
       title: {
         type: String,
