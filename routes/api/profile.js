@@ -173,6 +173,9 @@ router.put(
       check('title', 'title is required')
         .not()
         .isEmpty(),
+      check('mediatype', 'mediatype is required')
+        .not()
+        .isEmpty(),
       check('url', 'url is required')
         .not()
         .isEmpty()
@@ -184,10 +187,11 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { title, url } = req.body;
+    const { title, mediatype, url } = req.body;
 
     const newMedia = {
       title,
+      mediatype,
       url
     };
 

@@ -32,6 +32,10 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
       },
+      mediatype: {
+        type: String,
+        required: true
+      },
       url: {
         type: String,
         required: true
