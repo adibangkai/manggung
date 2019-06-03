@@ -13,6 +13,9 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  displaypicture: {
+    type: String
+  },
   website: {
     type: String
   },

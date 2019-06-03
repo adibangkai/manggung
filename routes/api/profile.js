@@ -53,6 +53,7 @@ router.post(
     const {
       tipe,
       name,
+      displaypicture,
       website,
       location,
       bio,
@@ -68,6 +69,7 @@ router.post(
     profileFields.user = req.user.id;
     if (tipe) profileFields.tipe = tipe;
     if (name) profileFields.name = name;
+    if (displaypicture) profileFields.name = displaypicture;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
