@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
+import AddMedia from './components/profile-forms/AddMedia';
 
 //redux
 import { Provider } from 'react-redux';
@@ -48,6 +49,7 @@ const App = () => {
                 path='/edit-profile'
                 component={EditProfile}
               />
+              <PrivateRoute exact path='/add-media' component={AddMedia} />
             </Switch>
           </section>
         </Fragment>
