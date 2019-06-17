@@ -127,8 +127,7 @@ const EditProfile = ({
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            gunakan koma (eg. Rock,Jazz,Blues) isi dengan aliran yang biasa
-            dimainkan
+            gunakan koma (eg. Rock,Jazz,Blues) isi dengan aliran yang dimainkan
           </small>
         </div>
         <div className='form-group'>
