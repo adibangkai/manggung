@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
+import ProfileMedia from './ProfileMedia';
 import { getProfileById } from '../../actions/profile';
 
 const Profile = ({
@@ -24,7 +25,7 @@ const Profile = ({
       ) : (
         <Fragment>
           <Link to='/profiles' className='btn btn-light'>
-            Back to Profiles
+            Kembali
           </Link>
           {auth.isAuthenticated &&
             auth.loading === false &&
@@ -36,6 +37,19 @@ const Profile = ({
           <div className='profie-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
+
+            <div className='profile-exp bg-white p-2'>
+              <h2 className='text-primary'>Media</h2>
+              {profile.media.length > 0 ? (
+                <Fragment>
+                  {profile.media.map(media => (
+                    <ProfileMedia key={media._id} media={media} />
+                  ))}
+                </Fragment>
+              ) : (
+                <h4>Tidak Ada</h4>
+              )}
+            </div>
           </div>
         </Fragment>
       )}

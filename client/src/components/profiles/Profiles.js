@@ -15,7 +15,6 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary'>Musisi</h1>
           <p className='lead'>
             <i className='fab fa-connectdevelop' /> Cari dan Hubungi Musisi yang
             anda Cari
@@ -26,7 +25,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                 <ProfileItem key={profile._id} profile={profile} />
               ))
             ) : (
-              <h4>no profile found</h4>
+              <h4>tidak ditemukan</h4>
             )}
           </div>
         </Fragment>

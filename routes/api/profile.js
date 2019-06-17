@@ -145,6 +145,28 @@ router.get('/user/:user_id', async (req, res) => {
   }
 });
 
+// @route   Get api/profile/user/:user_id
+// @desc    get profile by user id
+// @access  Public
+
+router.get('/:tipe', async (req, res) => {
+  try {
+    const profile = await Profile.find({
+      tipe: req.params.tipe
+    }).populate('user', ['name', 'avatar']);
+
+    if (!profile) return res.status(400).json({ msg: 'data tidak ditemukan' });
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind == 'ObjectId') {
+      return res.status(400).json({ msg: 'data tidak ditemukan' });
+    }
+    res.status(500).send('Server Error');
+  }
+});
+
 // @route   DELETE api/profile
 // @desc    DELETE profile,user & post
 // @access  private

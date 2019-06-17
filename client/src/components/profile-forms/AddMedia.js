@@ -17,12 +17,12 @@ const AddMedia = ({ addMedia, history }) => {
   const { title, mediatype, url } = formData;
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add An Experience</h1>
+      <h1 className='large text-primary'>Add An Media</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Add any developer/programming
-        positions that you have had in the past
+        <i className='fas fa-code-branch' />
+        tambahkan media foto / video
       </p>
-      <small>* = required field</small>
+      <small>* = harus diisi</small>
       <form
         className='form'
         onSubmit={e => {
@@ -64,7 +64,7 @@ const AddMedia = ({ addMedia, history }) => {
         </div>
         <input type='submit' className='btn btn-primary my-1' />
         <a className='btn btn-light my-1' href='dashboard.html'>
-          Go Back
+          kembali{' '}
         </a>
       </form>
     </Fragment>

@@ -26,7 +26,7 @@ const Landing = ({ auth: { isAuthenticated, loading } }) => {
       <div className='dark-overlay'>
         <div className='landing-inner'>
           <h1 className='x-large'>Manggung</h1>
-          <p className='lead'>Tampilkan Karyamu , Cari Panggungmu</p>
+          <p className='lead'>Cari Panggungmu</p>
           {!loading && (
             <Fragment>{isAuthenticated ? authLanding : guestLanding}</Fragment>
           )}

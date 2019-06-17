@@ -42,21 +42,20 @@ const CreateProfile = ({ createProfile, history }) => {
   };
   return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Profile</h1>
+      <h1 className='large text-primary'>Buat Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Let's get some information to make your
-        profile stand out
+        <i className='fas fa-user' /> Buat Profilmu agar semua tahu
       </p>
-      <small>* = required field</small>
+      <small>* harus diisi</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
           <select name='tipe' value={tipe} onChange={e => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
+            <option value='0'>* Pilih Tipe Profilmu</option>
             <option value='Band'>Band/Musisi</option>
             <option value='Venue'> Venue</option>
           </select>
           <small className='form-text'>
-            Give us an idea of where you are at in your career
+            *pilih kamu mendaftar sebagai musisi atau venue
           </small>
         </div>
         <div className='form-group'>
@@ -68,7 +67,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Could be your own company or one you work for
+            *bisa nama panggung,band atau nama venue mu
           </small>
         </div>
         <div className='form-group'>
@@ -80,7 +79,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Could be your own or a company website
+            website yang dapat dikunjungi selain sosial media
           </small>
         </div>
         <div className='form-group'>
@@ -91,9 +90,7 @@ const CreateProfile = ({ createProfile, history }) => {
             value={location}
             onChange={e => onChange(e)}
           />
-          <small className='form-text'>
-            City & state suggested (eg. Boston, MA)
-          </small>
+          <small className='form-text'>Lokasi </small>
         </div>
         <div className='form-group'>
           <input
@@ -104,7 +101,7 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. Rock,Jazz,Blues)
+            gunakan koma (eg. Rock,Jazz,Blues) isi dengan aliran yang dimainkan{' '}
           </small>
         </div>
         <div className='form-group'>
@@ -124,7 +121,9 @@ const CreateProfile = ({ createProfile, history }) => {
             value={bio}
             onChange={e => onChange(e)}
           />
-          <small className='form-text'>Tell us a little about yourself</small>
+          <small className='form-text'>
+            sampaikan kepada semua tentang dirimu
+          </small>
         </div>
 
         <div className='my-2'>
@@ -133,7 +132,7 @@ const CreateProfile = ({ createProfile, history }) => {
             type='button'
             className='btn btn-light'
           >
-            Add Social Network Links
+            tambahkan link social media
           </button>
           <span>Optional</span>
         </div>
@@ -187,7 +186,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
         <input type='submit' className='btn btn-primary my-1' />
         <a className='btn btn-light my-1' href='dashboard.html'>
-          Go Back
+          kembali
         </a>
       </form>
     </Fragment>
