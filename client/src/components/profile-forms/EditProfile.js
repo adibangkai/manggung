@@ -77,8 +77,9 @@ const EditProfile = ({
         <div className='form-group'>
           <select name='tipe' value={tipe} onChange={e => onChange(e)}>
             <option value='0'>* Pilih Tipe Profilmu</option>
-            <option value='Band'>Musisi</option>
-            <option value='Venue'>Venue</option>
+            <option value='Band'>Band</option>
+            <option value='Penyanyi'>Penyanyi</option>
+            <option value='Venue'>Tempat Manggung</option>
           </select>
           <small className='form-text'>
             *pilih kamu mendaftar sebagai musisi atau venue

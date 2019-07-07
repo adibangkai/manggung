@@ -8,6 +8,7 @@ const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     tipe: '',
     name: '',
+    premium: 'false',
     displayPicture: '',
     website: '',
     location: '',
@@ -51,8 +52,9 @@ const CreateProfile = ({ createProfile, history }) => {
         <div className='form-group'>
           <select name='tipe' value={tipe} onChange={e => onChange(e)}>
             <option value='0'>* Pilih Tipe Profilmu</option>
-            <option value='Band'>Band/Musisi</option>
-            <option value='Venue'> Venue</option>
+            <option value='Band'>Band</option>
+            <option value='Penyanyi'>Penyanyi</option>
+            <option value='Venue'>Tempat Manggung</option>
           </select>
           <small className='form-text'>
             *pilih kamu mendaftar sebagai musisi atau venue
@@ -66,10 +68,12 @@ const CreateProfile = ({ createProfile, history }) => {
             value={name}
             onChange={e => onChange(e)}
           />
+
           <small className='form-text'>
             *bisa nama panggung,band atau nama venue mu
           </small>
         </div>
+
         <div className='form-group'>
           <input
             type='text'

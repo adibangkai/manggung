@@ -8,7 +8,10 @@ const DashboardActions = () => {
         <i class='fas fa-user-circle text-primary' /> Edit Profile
       </Link>
       <Link to='/add-media' class='btn btn-light'>
-        <i class='fab fa-black-tie text-primary' /> Add Experience
+        <i class='fas fa-photo-video text-primary' /> tambah Media
+      </Link>
+      <Link to='/add-jadwal' class='btn btn-light'>
+        <i class='fas fa-calendar-alt text-primary' /> tambah Jadwal
       </Link>
     </div>
   );

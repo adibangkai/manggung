@@ -6,6 +6,7 @@ import Spinner from '../layout/Spinner';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import DashboardActions from './DashboardActions';
 import Media from './Media';
+import Jadwal from './Jadwal';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -28,7 +29,10 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+
           <Media media={profile.media} />
+          <Jadwal jadwal={profile.jadwal} />
+
           <div className='my-2'>
             <button className='btn btn-danger' onClick={() => deleteAccount()}>
               <i className='fas fa-user-minus' />

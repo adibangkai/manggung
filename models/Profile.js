@@ -13,6 +13,9 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  premium: {
+    type: Boolean
+  },
   displayPicture: {
     type: String
   },
@@ -42,6 +45,24 @@ const ProfileSchema = new mongoose.Schema({
       url: {
         type: String,
         required: true
+      }
+    }
+  ],
+  jadwal: [
+    {
+      title: {
+        type: String,
+        required: true
+      },
+      location: {
+        type: String
+      },
+      tanggal: {
+        type: Date,
+        required: true
+      },
+      description: {
+        type: String
       }
     }
   ],

@@ -6,6 +6,7 @@ import Spinner from '../layout/Spinner';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileMedia from './ProfileMedia';
+import ProfileJadwal from './ProfileJadwal';
 import { getProfileById } from '../../actions/profile';
 
 const Profile = ({
@@ -24,7 +25,7 @@ const Profile = ({
         <Spinner />
       ) : (
         <Fragment>
-          <Link to='/profiles' className='btn btn-light'>
+          <Link to='/profiles/Band' className='btn btn-light'>
             Kembali
           </Link>
           {auth.isAuthenticated &&
@@ -34,7 +35,7 @@ const Profile = ({
                 Edit Profile
               </Link>
             )}
-          <div className='profie-grid my-1'>
+          <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
 
@@ -44,6 +45,18 @@ const Profile = ({
                 <Fragment>
                   {profile.media.map(media => (
                     <ProfileMedia key={media._id} media={media} />
+                  ))}
+                </Fragment>
+              ) : (
+                <h4>Tidak Ada</h4>
+              )}
+            </div>
+            <div className='profile-edu bg-white p-2'>
+              <h2 className='text-primary'>Jadwal</h2>
+              {profile.jadwal.length > 0 ? (
+                <Fragment>
+                  {profile.jadwal.map(jadwal => (
+                    <ProfileJadwal key={jadwal._id} jadwal={jadwal} />
                   ))}
                 </Fragment>
               ) : (

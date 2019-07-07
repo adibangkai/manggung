@@ -6,18 +6,18 @@ import PropTypes from 'prop-types';
 const Landing = ({ auth: { isAuthenticated, loading } }) => {
   const authLanding = (
     <div className='buttons'>
-      <Link to='/#!' className='btn btn-primary'>
-        Discover
+      <Link to='/profiles/Band' className='btn btn-primary'>
+        Temukan
       </Link>
     </div>
   );
   const guestLanding = (
     <div className='buttons'>
       <Link to='/register' className='btn btn-primary'>
-        Sign Up
+        Daftar
       </Link>
       <Link to='/login' className='btn btn-light'>
-        Login
+        Masuk
       </Link>
     </div>
   );

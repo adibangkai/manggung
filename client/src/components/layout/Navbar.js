@@ -8,7 +8,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Discover</Link>
+        <Link to='/profiles/Band'>Temukan</Link>
       </li>
       <li>
         <Link to='/posts'>Feed</Link>
@@ -24,7 +24,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <a onClick={logout} href='#!'>
           <i className='fas fa-sign-out-alt' />
           {'  '}
-          <span className='hide-sm'>Logout</span>
+          <span className='hide-sm'>Keluar</span>
         </a>
       </li>
     </ul>
@@ -33,14 +33,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Discover</Link>
+        <Link to='/profiles/Band'>Temukan</Link>
       </li>
 
       <li>
-        <Link to='/register'>Register</Link>
+        <Link to='/register'>Daftar</Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
+        <Link to='/login'>Masuk</Link>
       </li>
     </ul>
   );

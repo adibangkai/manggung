@@ -10,6 +10,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading }, match }) => {
   useEffect(() => {
     getProfiles(match.params.tipe);
   }, [getProfiles, match.params.tipe]);
+
   return (
     <Fragment>
       {loading ? (
@@ -20,17 +21,15 @@ const Profiles = ({ getProfiles, profile: { profiles, loading }, match }) => {
             <i className='fab fa-connectdevelop' /> Cari dan Hubungi Musisi yang
             anda Cari
           </p>
-          <Link to='/profiles/Band' className='btn btn-light'>
+          <Link to='/profiles/:tipe' className='btn btn-light'>
             Band
           </Link>
-          <Link to='/profiles/Penyanyi' className='btn btn-light'>
-            Penyanyi
-          </Link>
-          <Link to='/profiles/Venue' className='btn btn-light'>
+          <Link to='/profiles/:tipe' className='btn btn-light'>
             Venue
           </Link>
-          <br />
-          <br />
+          <Link to='/profiles/:tipe' className='btn btn-light'>
+            Penyanyi
+          </Link>
           <div className='profiles'>
             {profiles.length > 0 ? (
               profiles.map(profile => (
